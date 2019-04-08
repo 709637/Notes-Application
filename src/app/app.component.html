@@ -1,4 +1,4 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<!-- The content below is only a placeholder and can be replaced.
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
@@ -18,4 +18,35 @@
   </li>
 </ul>
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
+
+<app-header></app-header>
+
+<!-- <--expension--> 
+<mat-expansion-panel class="note-input-container">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Note
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+      <div class="note-input-fields">
+        <mat-form-field>
+          <input matInput [(ngModel)]="note.title" type="text" placeholder="Write your title" id="title" />
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput [(ngModel)]="note.text" placeholder="Description..." title="description" ></textarea>
+        </mat-form-field>
+      </div>
+      <div class="note-input-button">
+        <button mat-button (click)="takeNote(note)" color="primary" >Done</button>
+      </div>
+</mat-expansion-panel>
+
+<mat-card class="note-reader-container" *ngFor="let note of notes">
+  <mat-card-title>
+    {{note.title}}
+  </mat-card-title>
+  <mat-card-content>
+    {{note.text}}
+  </mat-card-content>
+</mat-card>
