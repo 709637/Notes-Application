@@ -50,3 +50,15 @@
     {{note.text}}
   </mat-card-content>
 </mat-card>
+
+<!-- or*****
+<mat-card class="note-reader-container" *ngFor="let note of notess$ | async">
+  <mat-card-title>
+    {{note.title}}
+  </mat-card-title>
+  <mat-card-content>
+    {{note.text}}
+  </mat-card-content>
+</mat-card> -->
+
+<input type="button" value="Post One Object" (click)="takeaNote()" />
