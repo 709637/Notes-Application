@@ -51,11 +51,12 @@ export class AppComponent implements OnInit {
     // this.notess$ =this.keepService.getNotes();
   }
 
-  takeaNote() {
-    this.keepService.postNote().subscribe(
+  takeaNote(note) {    
+    this.keepService.postNote(note).subscribe(
       (data) => {
         console.log(data);
         this.notes.push(data);
+        this.note = new Note();
       },
       error => console.log(error),
     );

@@ -21,9 +21,9 @@
 <router-outlet></router-outlet> -->
 
 <app-header></app-header>
-
+<!-- ********************************************************************************************************************************** -->
 <!-- <--expension--> 
-<mat-expansion-panel class="note-input-container">
+<!-- <mat-expansion-panel class="note-input-container">
   <mat-expansion-panel-header>
     <mat-panel-title>
       Note
@@ -38,7 +38,7 @@
         </mat-form-field>
       </div>
       <div class="note-input-button">
-        <button mat-button (click)="takeNote(note)" color="primary" >Done</button>
+        <button mat-button (click)="takeaNote(note)" color="primary" >Done</button>
       </div>
 </mat-expansion-panel>
 
@@ -51,7 +51,7 @@
   </mat-card-content>
 </mat-card>
 
-<!-- or*****
+ <!--or*****
 <mat-card class="note-reader-container" *ngFor="let note of notess$ | async">
   <mat-card-title>
     {{note.title}}
@@ -61,4 +61,9 @@
   </mat-card-content>
 </mat-card> -->
 
-<input type="button" value="Post One Object" (click)="takeaNote()" />
+<!--<input type="button" value="Post One Object" (click)="takeaNote()" /> -->
+
+
+<!-- ********************************************************************************************************************************** -->
+<!-- <app-login></app-login> -->
+ <router-outlet></router-outlet>

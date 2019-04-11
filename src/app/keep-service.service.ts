@@ -25,7 +25,12 @@ export class KeepServiceService {
     return this.http.get<Array<Note>>(this.notesURL);
    }
 
-   public postNote(): Observable<Note>{
-     return this.http.post<Note>(this.notesURL,this.notex);
-   }
+  //  public postNote(): Observable<Note>{
+  //    return this.http.post<Note>(this.notesURL,this.notex);
+  //  }
+   
+   
+   public postNote(postNote): Observable<Note>{
+    return this.http.post<Note>(this.notesURL,postNote);
+  }
 }
