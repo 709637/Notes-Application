@@ -1,0 +1,5 @@
+.note-reader{
+    margin:2em;
+    display: flex;
+    flex-wrap: wrap;
+}

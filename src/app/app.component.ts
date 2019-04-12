@@ -6,12 +6,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { KeepServiceService } from './keep-service.service';
-import { Observable } from 'rxjs';
+import { Observable, from } from 'rxjs';
+import {Note} from './note';
 
-export class Note {
-  title: string;
-  text: string;
-}
 
 
 @Component({
@@ -38,29 +35,10 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    let notes = this.keepService.getNotes().subscribe(
-      (data) => {
-        console.log(data);
-        return this.notes = data;
-      },
-      error => console.log(error),
-    );
-    console.log(notes);
-
-    //or*****
-    // this.notess$ =this.keepService.getNotes();
+    
   }
 
-  takeaNote(note) {    
-    this.keepService.postNote(note).subscribe(
-      (data) => {
-        console.log(data);
-        this.notes.push(data);
-        this.note = new Note();
-      },
-      error => console.log(error),
-    );
-  }
+  
 
 
 

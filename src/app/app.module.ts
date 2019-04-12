@@ -17,13 +17,20 @@ import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { from } from 'rxjs';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { TakeNoteComponent } from './take-note/take-note.component';
+import { shareReplay } from 'rxjs/operators';
+import { NoteViewComponent } from './note-view/note-view.component';
+import { NoteComponent } from './note/note.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    TakeNoteComponent,
+    NoteViewComponent,
+    NoteComponent
   ],
   imports: [
     BrowserModule,

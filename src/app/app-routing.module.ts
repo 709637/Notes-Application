@@ -3,6 +3,8 @@ import { Routes, RouterModule ,CanActivate} from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CanActivateGuard } from './can-activate.guard';
+import {TakeNoteComponent} from './take-note/take-note.component';
+import {NoteViewComponent} from './note-view/note-view.component';
 
 const routes: Routes = [
   {
@@ -11,7 +13,21 @@ const routes: Routes = [
   },{
     path:'dashboard',
     component:DashboardComponent,
-    canActivate: [CanActivateGuard]
+    canActivate: [CanActivateGuard],
+    children:[
+      {
+        path:'view/note-view',
+        component:NoteViewComponent
+      },
+      {
+        path:'',
+        redirectTo:'view/note-view',
+        pathMatch:'full'
+      }
+    ]
+  },{
+    path:'takenote',
+    component:TakeNoteComponent
   }
 ];
 

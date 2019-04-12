@@ -17,5 +17,9 @@ export class RouterService {
     this.route.navigate(['login']);
   }
 
+  totakenote(){
+    this.route.navigate(['takenote']);
+  }
+
   
 }

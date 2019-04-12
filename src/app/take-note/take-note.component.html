@@ -1,0 +1,32 @@
+<mat-expansion-panel class="note-input-container">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Note
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+      <div class="note-input-fields">
+        <mat-form-field>
+          <input matInput [(ngModel)]="note.title" type="text" placeholder="Write your title" id="title" />
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput [(ngModel)]="note.text" placeholder="Description..." title="description" ></textarea>
+        </mat-form-field>
+      </div>
+      <div class="note-input-button">
+        <button mat-button (click)="takeaNote(note)" color="primary" >Done</button>
+      </div>
+</mat-expansion-panel>
+
+
+
+ <!--or*****
+<mat-card class="note-reader-container" *ngFor="let note of notess$ | async">
+  <mat-card-title>
+    {{note.title}}
+  </mat-card-title>
+  <mat-card-content>
+    {{note.text}}
+  </mat-card-content>
+</mat-card> -->
+
+<!--<input type="button" value="Post One Object" (click)="takeaNote()" />-->

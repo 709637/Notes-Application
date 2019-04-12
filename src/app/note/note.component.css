@@ -1,0 +1,6 @@
+.note-reader-container{
+    margin:2em;
+    display: flex;
+    flex-direction: column;
+    width:24vw;
+}

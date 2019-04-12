@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import {HttpClient} from '@angular/common/http';
 import { inject } from '@angular/core/testing';
-import { Note } from './app.component';
+import { Note } from './note';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -18,7 +18,7 @@ export class KeepServiceService {
 
   constructor(public http: HttpClient) {
     console.log('My service is working');
-    this.notesURL="http://localhost:3000/notes";
+    this.notesURL="http://localhost:3010/notes";
    }
 
    public getNotes(): Observable<Array<Note>>{
