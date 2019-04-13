@@ -5,6 +5,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CanActivateGuard } from './can-activate.guard';
 import {TakeNoteComponent} from './take-note/take-note.component';
 import {NoteViewComponent} from './note-view/note-view.component';
+import { EditViewComponent } from './edit-view/edit-view.component';
+import { EditViewOpenerComponent } from './edit-view-opener/edit-view-opener.component';
+import {Location} from '@angular/common';
 
 const routes: Routes = [
   {
@@ -23,6 +26,11 @@ const routes: Routes = [
         path:'',
         redirectTo:'view/note-view',
         pathMatch:'full'
+      },
+      {
+        path:'note/:noteid/edit',
+        component: EditViewOpenerComponent,
+        outlet: 'noteEditOutlet'
       }
     ]
   },{

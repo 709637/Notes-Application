@@ -1,0 +1,11 @@
+<div class="note-input-fields">
+  <mat-form-field>
+    <input matInput [(ngModel)]="note.title" type="text" placeholder="Write your title" id="title" />
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput [(ngModel)]="note.text" placeholder="Description..." title="description" ></textarea>
+  </mat-form-field>
+</div>
+<div class="note-input-button">
+  <button mat-button (click)="editNote()" color="primary" >Done</button>
+</div>

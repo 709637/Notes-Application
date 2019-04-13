@@ -1,5 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 
+import {RouterService} from 'services/router.service';
+
 import {Note} from '../note';
 
 @Component({
@@ -9,12 +11,16 @@ import {Note} from '../note';
 })
 export class NoteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private routerService: RouterService) { }
   
   @Input()
   note:Note;
 
   ngOnInit() {
+  }
+
+  editNote(){
+    this.routerService.toeditnote(this.note.id);
   }
 
 }

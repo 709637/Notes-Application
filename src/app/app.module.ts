@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatDialogModule} from '@angular/material/dialog';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -21,6 +22,8 @@ import { TakeNoteComponent } from './take-note/take-note.component';
 import { shareReplay } from 'rxjs/operators';
 import { NoteViewComponent } from './note-view/note-view.component';
 import { NoteComponent } from './note/note.component';
+import { EditViewComponent } from './edit-view/edit-view.component';
+import { EditViewOpenerComponent } from './edit-view-opener/edit-view-opener.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import { NoteComponent } from './note/note.component';
     DashboardComponent,
     TakeNoteComponent,
     NoteViewComponent,
-    NoteComponent
+    NoteComponent,
+    EditViewComponent,
+    EditViewOpenerComponent
   ],
   imports: [
     BrowserModule,
@@ -44,9 +49,11 @@ import { NoteComponent } from './note/note.component';
     FormsModule,
     MatCardModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[EditViewComponent]
 })
 export class AppModule { }
