@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, DoCheck } from '@angular/core';
 
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -13,7 +13,7 @@ import { from } from 'rxjs';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit,OnChanges,DoCheck {
 
   //designing model for form with fields username and password
   loginForm = new FormGroup({
@@ -24,7 +24,17 @@ export class LoginComponent implements OnInit {
   constructor(public authentication: AuthenticationService, private routerService: RouterService) { }
 
   ngOnInit() {
+    console.log("ngOnInit called================");
   }
+
+  ngOnChanges(){
+    console.log("ngOnChanges called================");
+  }
+
+  ngDoCheck(){
+    console.log("ngDoCheck called================");
+  }
+
 
   signIn() {
     let users = [];
@@ -37,6 +47,7 @@ export class LoginComponent implements OnInit {
       let passflag = users[0].filter(usr => usr.password === user.password);
       if (userflag[0] === passflag[0]) {
         this.authentication.setToken(userflag[0].authKey);
+        console.log("It came here");
         this.routerService.todashboard();
       }
     },

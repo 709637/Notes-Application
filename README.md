@@ -25,3 +25,17 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+# How to run the application on local
+
+# First run npm run start
+Then serve to json files on json server
+commands to run json server is "json-server --watch db.json --port 3010"  (With port)
+The files are present in server folder under the root directory
+
+db.json
+auth.json
+
+Check the user name and password in auth.json file.
+After logging in go to dashboard page directly since the login to dashboard is not working as of now.

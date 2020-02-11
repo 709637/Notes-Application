@@ -15,6 +15,9 @@ export class EditViewOpenerComponent implements OnInit {
   constructor(private matDialog: MatDialog, private activatedRoute: ActivatedRoute, private routerService: RouterService) {
 
     const noteid= +this.activatedRoute.snapshot.paramMap.get('noteid');
+    const noteids= this.activatedRoute.params.subscribe((data)=>{
+       console.log("this.activatedRoute.params",data);
+    });
     
     this.matDialog.open(EditViewComponent, {
       data:{

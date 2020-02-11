@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import {AppRoutingModule} from '../src/app/app-routing.module';
 import {Location} from '@angular/common';
 
@@ -8,10 +8,14 @@ import {Location} from '@angular/common';
 })
 export class RouterService {
 
-  constructor(private route: Router, private location: Location) { }
+  constructor(private route: Router, private activatedRoute: ActivatedRoute, private location: Location) { }
 
   todashboard() {
     this.route.navigate(['dashboard']);
+  }
+
+  testWithExtraParam() {  //you con call this methos through this.routerService.testWithExtraParam(); and url will be   http://localhost:4200/dashboard/a/jdrfhgskjl
+    this.route.navigate(['dashboard',"a","jdrfhgskjl"]);
   }
 
   tologin() {
@@ -20,6 +24,7 @@ export class RouterService {
 
   totakenote(){
     this.route.navigate(['takenote']);
+
   }
 
   toeditnote(noteid){

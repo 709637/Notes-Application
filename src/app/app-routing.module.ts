@@ -29,6 +29,10 @@ const routes: Routes = [
         component:NoteViewComponent
       },
       {
+        path:'a/jdrfhgskjl',
+        component: TakeNoteComponent
+      },
+      {
         path:'',
         redirectTo:'view/note-view',
         pathMatch:'full'
