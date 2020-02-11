@@ -1,0 +1,17 @@
+.note-input-container{
+    width: 50vw;
+    margin: auto;
+    margin-top: 2em;
+    }
+    
+    .note-input-fields{
+    display: flex;
+    flex-direction: column;
+    }
+    
+    .note-input-button{
+    display: flex;
+    justify-content: flex-end;
+    }
+    
+    

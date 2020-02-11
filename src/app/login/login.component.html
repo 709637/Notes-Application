@@ -1,0 +1,17 @@
+<form [formGroup]="loginForm" (ngSubmit)="signIn()" >
+  <div>
+    <label for="username">User Name</label>
+    <input formControlName="username" type="text" placeholder="User Name" />
+    <small>{{getusernameErrorMessage()}}</small>
+  </div><br/>
+  <div>
+      <label for="password">Password</label>
+      <input formControlName="password" type="password" placeholder="Password..." />
+      <small>{{getpasswordErrorMessage()}}</small>
+      <small>{{getpasswordLengthErrorMessage()}}</small>
+   </div><br/>
+   <div>
+      <input type="submit" value="Sign In" />
+      <button value="signIn">Submit</button>
+   </div>
+</form>
